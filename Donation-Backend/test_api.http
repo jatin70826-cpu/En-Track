@@ -1,0 +1,30 @@
+### User Register
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "Jatin",
+    "email": "Jatin@example.com",
+    "password": "1232622"
+}
+
+
+### NGO Add
+POST http://localhost:5000/api/ngos/add
+Content-Type: application/json
+
+{
+    "name": "tech for tomorrow",
+    "description": "education"
+}
+
+
+### Donation Add
+POST http://localhost:5000/api/donations/add
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "ngo_id": 1,
+    "amount": 7000
+}

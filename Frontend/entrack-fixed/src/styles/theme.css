@@ -1,0 +1,190 @@
+/* ── Light Mode Variables (default) ─────────────────────── */
+:root {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --primary: #2563EB;
+  --primary-foreground: #ffffff;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --border: rgba(37,99,235,0.2);
+  --ring: #2563EB;
+  --radius: 0.75rem;
+}
+
+/* ── Dark Mode Variables ─────────────────────────────────── */
+.dark {
+  --background: #060C1A;
+  --foreground: #e8eeff;
+  --card: #0a1628;
+  --card-foreground: #e8eeff;
+  --primary: #2563EB;
+  --primary-foreground: #ffffff;
+  --muted: #0d1829;
+  --muted-foreground: #6b7280;
+  --border: rgba(37,99,235,0.15);
+  --ring: #2563EB;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: rgba(37,99,235,0.4); border-radius: 99px; }
+
+/* Selection */
+::selection { background: rgba(37,99,235,0.35); color: #fff; }
+
+/* ── Glass card utilities (Light Mode defaults) ─────────── */
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.72) 100%);
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.95);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Dark Mode Glass */
+.dark .glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(59,130,246,0.15);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 24px rgba(37,99,235,0.05), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.glass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(37,99,235,0.06), inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.dark .glass:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 32px rgba(37,99,235,0.1), inset 0 1px 0 rgba(255,255,255,0.08);
+  border-color: rgba(59,130,246,0.25);
+}
+
+/* Glass Card (Light) */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 100%);
+  border: 1px solid rgba(255,255,255,0.7);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.95);
+  border-radius: 1.5rem;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Mode Glass Card */
+.dark .glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(59,130,246,0.12);
+  box-shadow: 0 8px 32px rgba(59,130,246,0.06), 0 0 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08), 0 4px 12px rgba(37,99,235,0.06), inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.dark .glass-card:hover {
+  box-shadow: 0 16px 48px rgba(59,130,246,0.1), 0 0 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+  border-color: rgba(59,130,246,0.2);
+}
+
+/* Glass Card Blue (Light) */
+.glass-card-blue {
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(59,130,246,0.04) 100%);
+  border: 1px solid rgba(59,130,246,0.2);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  box-shadow: 0 4px 20px rgba(59,130,246,0.08), 0 0 16px rgba(37,99,235,0.04), inset 0 1px 0 rgba(255,255,255,0.5);
+  border-radius: 1.25rem;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Mode Glass Card Blue */
+.dark .glass-card-blue {
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(59,130,246,0.03) 100%);
+  border: 1px solid rgba(59,130,246,0.18);
+  box-shadow: 0 4px 20px rgba(59,130,246,0.1), 0 0 16px rgba(37,99,235,0.06), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Glass Input (Light) */
+.glass-input {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #0F172A;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Glass Input */
+.dark .glass-input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e8eeff;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: rgba(59,130,246,0.5);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+.glass-input::placeholder {
+  color: rgba(100,116,139,0.7);
+}
+
+.dark .glass-input::placeholder {
+  color: rgba(156,163,175,0.6);
+}
+
+.glass-hover:hover {
+  border-color: rgba(37,99,235,0.4) !important;
+  box-shadow: 0 12px 40px rgba(37,99,235,0.15), inset 0 1px 0 rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+/* Glass Navbar */
+.glass-nav {
+  background: linear-gradient(135deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.7) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  box-shadow: 0 1px 16px rgba(0,0,0,0.04);
+}
+
+.dark .glass-nav {
+  background: linear-gradient(135deg, rgba(6,12,26,0.88) 0%, rgba(6,12,26,0.8) 100%);
+  border-bottom: 1px solid rgba(59,130,246,0.1);
+  box-shadow: 0 1px 16px rgba(0,0,0,0.3), 0 0 32px rgba(37,99,235,0.04);
+}
+
+/* ── Theme transition: only active during the switch ─────── */
+/* Applied via JS for 400ms, then removed — prevents lag on all other interactions */
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition:
+    background-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 350ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Disable transition on animated elements even during switch */
+.theme-transitioning .animate-marquee,
+.theme-transitioning .animate-ticker,
+.theme-transitioning [class*="animate-"] {
+  transition: none !important;
+}
