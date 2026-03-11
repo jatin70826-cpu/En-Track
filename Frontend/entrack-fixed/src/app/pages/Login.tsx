@@ -25,7 +25,8 @@ export function Login() {
     if (!isLogin) { // Registration
       const nameInput = form.elements.namedItem("name") as HTMLInputElement;
 
-      const response = await fetch("http://localhost:5000/api/users/register", {
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+      const response = await fetch(`${apiUrl}/users/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -45,7 +46,8 @@ export function Login() {
         alert(data.error || "Registration failed");
       }
     } else { // Login
-      const response = await fetch("http://localhost:5000/api/users/login", {
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+      const response = await fetch(`${apiUrl}/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -17,10 +17,10 @@ app.use(express.json());
 
 //  MySQL Connection
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "xlad@1290",
-    database: "donation_db"
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD || "xlad@1290",
+    database: process.env.DB_NAME || "donation_db"
 });
 
 //  Connection Check
@@ -190,6 +190,10 @@ app.post("/api/electronics-donation", (req, res) => {
 
 
 //  Start Server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== "production") {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
+
+module.exports = app;
